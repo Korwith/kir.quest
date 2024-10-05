@@ -4,12 +4,10 @@ body {
 
 @keyframes breathe {
     0% {
-        background-position-x: 0;
         background-position-y: 0;
     }
 
     100% {
-        background-position-x: 100vw;
         background-position-y: 100vh;
     }
 }
@@ -34,7 +32,7 @@ body {
     opacity: 0.5;
     background-image: url(icon/dot.svg);
     animation: breathe;
-    animation-duration: 100s;
+    animation-duration: 80s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }

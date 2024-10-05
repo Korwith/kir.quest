@@ -88,9 +88,9 @@ header {
 
 .main_site {
     width: 100%;
-    height: calc(100vh - 55px);
+    height: calc(100dvh - 55px);
     position: fixed;
-    bottom: 0;
+    top: 55px;
     display: flex;
     flex-direction: column;
 }

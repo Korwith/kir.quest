@@ -57,7 +57,8 @@ header {
     height: 55px;
     background-color: #151515;
     border-bottom: 1px solid #252525;
-    position: relative;
+    position: fixed;
+    top: 0;
 }
 
 .header_left {

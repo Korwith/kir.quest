@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="header_left">
+                <div class="icon"></div>
+                <span class="title">3D Viewer</span>
+            </div>
+        </header>
+
+        <nav class="sidebar">
+            <div class="mini">
+                <button class="open_folder"></button>
+                <button class="open_link"></button>
+            </div>
+            <div class="list">
+                <div class="item_holder">
+                    
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+
+        </div>
+    </body>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./node_modules/three/build/three.module.js",
+                "OrbitControls": "./node_modules/three/examples/jsm/controls/OrbitControls.js",
+                "OBJLoader": "./node_modules/three/examples/jsm/loaders/OBJLoader.js",
+                "MTLLoader": "./node_modules/three/examples/jsm/loaders/MTLLoader.js",
+                "GLTFLoader": "./node_modules/three/examples/jsm/loaders/GLTFLoader.js",
+                "FBXLoader": "./node_modules/three/examples/jsm/loaders/FBXLoader.js",
+                "Stats": "./node_modules/three/examples/jsm/libs/stats.module.js"
+            }
+        }
+    </script>
+    <script src="handle.js" type="module"></script>
+</html>

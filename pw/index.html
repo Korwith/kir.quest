@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <div class="header_left">
+            <div class="icon"></div>
+            <span class="title">PriceMatch</span>
+        </div>
+    </header>
+
+    <nav class="sidebar">
+        <div class="sidebar_header">
+            <span class="product_search" contenteditable></span>
+            <button class="run_search"></button>
+        </div>
+        <div class="blurbs">
+            <span class="sidebar_blurb start">Search for a product</span>
+            <span class="sidebar_blurb location hide">Fetching Location..</span>
+            <span class="sidebar_blurb results hide">0 results</span>
+        </div>
+        <div class="search_results">
+        </div>
+    </nav>
+
+    <div class="content">
+
+    </div>
+
+    <div class="placeholder sidebar_entry">
+        <img class="icon"></img>
+        <div class="info">
+            <span class="name">Product Name</span>
+            <span class="price">Product Price</span>
+            <div class="rating"></div>
+        </div>
+    </div>
+</body>
+
+<script type="importmap">
+    {
+        "imports": {
+            "playwright": "./node_modules/playwright",
+        }
+    }
+</script>
+<script src="shopping.js" type="module"></script>
+
+</html>

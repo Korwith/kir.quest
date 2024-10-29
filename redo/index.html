@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>kircic.org</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="kircic">
+    <meta name="description" content="Collection of all of my personal projects and ideas.">
+    <meta property="og:title" content="kircic.org">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.kircic.org">
+    <meta property="og:image" content="https://www.kircic.org/icon/favicon.png">
+    <meta property="og:description" content="Collection of all of my personal projects and ideas.">
+    <meta name="theme-color" content="#000001">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="icon/favicon.png">
+</head>
+
+<body>
+    <div class="blurred_img_bg"></div>
+
+    <nav class="sidebar glass">
+        <div class="sidebar_container">
+            <div class="traffic">
+                <a href='https://google.com'>
+                    <div class="red"></div>
+                </a>
+                <div class="yellow"></div>
+                <div class="green"></div>
+            </div>
+    
+            <div class="select hold">
+                <div class="icon stack"></div>
+                <span>kircic.org</span>
+            </div>
+            <a href="https://www.snapshot.ink" target="_blank">
+                <div class="select">
+                    <div class="icon img"></div>
+                    <span>snapshot.ink</span>
+                </div>
+            </a>    
+        </div>
+
+        <hr>
+
+        <div class="sidebar_container mid">
+            <span class="category">Navigation</span>
+
+            <a href="#home" pagelink>
+                <div class="select">
+                    <div class="icon home"></div>
+                    <span>Home</span>
+                </div>
+            </a>
+            <a href="#projects" pagelink>
+                <div class="select">
+                    <div class="icon cube"></div>
+                    <span>Projects</span>
+                </div>
+            </a>
+            <a href="#search" pagelink>
+                <div class="select">
+                    <div class="icon search"></div>
+                    <span>Search</span>
+                </div>
+            </a>
+
+            <hr>
+            <span class="category">Support</span>
+
+            <a href="https://arielaraya.xyz" target="_blank">
+                <div class="select">
+                    <div class="icon link"></div>
+                    <span>arielaraya.xyz</span>
+                </div>
+            </a>
+
+            <a href="https://meitzler.xyz" target="_blank">
+                <div class="select">
+                    <div class="icon link"></div>
+                    <span>meitzler.xyz</span>
+                </div>
+            </a>
+
+            <a href="https://www.prettycoolwebsite.com" target=_blank>
+                <div class="select">
+                    <div class="icon link"></div>
+                    <span>prettycoolwebsite.com</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="sidebar_footer">
+            <span class="commit_count darkglass">commits</span>
+            <span class="digital_size darkglass">MB</span>
+        </div>
+    </nav>
+
+    <header class="glass">
+        <button class="sidebar_button"></button>
+        <div class="clock">
+            <span>10/29/24</span>
+            <span>8:09AM</span>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="page home">
+            <div class="about glass">
+                <h1>About Me</h1>
+                <div class="image_holder">
+                    <div class="javascript"></div>
+                    <div class="html"></div>
+                    <div class="css"></div>
+                    <div class="lua"></div>
+                    <div class="java"></div>
+                    <div class="cert"></div>
+                </div>
+                <span>Thaddeus Mathewson-Wood</span>
+                <span>Fluent in Lua, JavaScript, HTML, and CSS.</span>
+                <span>CompTIA A+ Certification</span>
+            </div>
+
+            <div class="featured glass">
+                <h1>Featured Projects</h1>
+                <div class="horizontal_pane"></div>
+            </div>
+
+            <div class="copyright glass">© kircic.org (2023-2024)</div>
+        </div>
+
+        <div class="page projects glass"></div>
+        <div class="page search glass">
+            <h1>Search</h1>
+            <span>Search Engines</span>
+        </div>
+    </div>
+
+    <!-- Placeholder -->
+    <div class="project_holder glass" id="project_placeholder">
+        <video autoplay loop muted playsinline></video>
+        <div class="title">
+            <div class="icon"></div>
+            <span>--</span>
+        </div>
+        <div class="info">--</div>
+        <div class="action">
+            <a>Launch</a>
+        </div>
+    </div>
+
+    <div class="search_holder" id="search_placeholder">
+        <a class="service glass">
+            <div class="icon"></div>
+        </a>
+        <input class="search_box glass" placeholder="Search">
+        <button class="search_go darkglass"></button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="index.js"></script>
+    <script src="stats.js"></script>
+    <script src="clock.js"></script>
+</body>
+
+</html>

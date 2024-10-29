@@ -1,0 +1,665 @@
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+@keyframes breathe {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 100vw;
+    }
+}
+
+body {
+    background-color: black;
+    margin: 10px;
+}
+
+#project_placeholder, #search_placeholder {
+    display: none;
+}
+
+.blurred_img_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(icon/blurred.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.glass {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.darkglass {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+nav.sidebar {
+    width: 275px;
+    height: calc(100% - 20px);
+    margin: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.sidebar_container.mid {
+    flex: 1;
+    overflow-y: auto;
+}
+
+nav.sidebar.shift {
+    transform: translateX(calc(-100% - 10px));
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.traffic {
+    width: calc(100% - 30px);
+    height: 20px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 6px;
+}
+
+.traffic div {
+    aspect-ratio: 1/1;
+    height: 14px;
+    margin: 3px;
+    border-radius: 50%;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.traffic div.red {
+    background-color: rgb(252, 97, 86);
+    border-color: rgb(223, 71, 68);
+}
+
+.traffic div.yellow {
+    background-color: rgb(252, 190, 43);
+    border-color: rgb(222, 159, 52);
+}
+
+.traffic div.green {
+    background-color: rgb(44, 201, 63);
+    border-color: rgb(39, 170, 53);
+}
+
+.select {
+    display: flex;
+    gap: 3px;
+    width: calc(100% - 10px);
+    height: 50px;
+    min-height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+    border-radius: 12px;
+    transition: background-color 0.2s;
+}
+
+.select.hold {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.select:hover {
+    background-color: rgba(0, 0, 0, 0.07)
+}
+
+.select .icon {
+    aspect-ratio: 1/1;
+    flex: 0 0 auto;
+    height: calc(100% - 10px);
+    margin: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+.select span {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    opacity: 0.9;
+    user-select: none;
+}
+
+.select .icon.stack {
+    background-image: url(icon/stack.svg);
+    background-size: 100%;
+}
+
+.select .icon.img {
+    background-image: url(icon/image.svg);
+    background-size: 95%;
+}
+
+.select .icon.home {
+    background-image: url(icon/home.svg);
+    background-size: 80%;
+}
+
+.select .icon.cube {
+    background-image: url(icon/cube.svg);
+    background-size: 90%;
+}
+
+.select .icon.search {
+    background-image: url(icon/search.svg);
+    background-size: 90%;
+}
+
+.select .icon.link {
+    background-image: url(icon/link.svg);
+    background-size: 80%;
+}
+
+.sidebar hr {
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar_footer {
+    height: 35px;
+    width: calc(100% - 20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    user-select: none;
+}
+
+.sidebar_footer span {
+    height: 22px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 8px;
+}
+
+span.category {
+    width: 100%;
+    height: 30px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    opacity: 0.9;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 305px);
+    height: 60px;
+    margin: 10px;
+    top: 0;
+    right: 0;
+    transition: width 0.3s;
+}
+
+header.shift {
+    width: calc(100% - 20px);
+}
+
+.sidebar_button {
+    aspect-ratio: 1/1;
+    height: 100%;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url(icon/lines.svg);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.clock {
+    height: calc(100% - 20px);
+    margin: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: right;
+    user-select: none;
+}
+
+.content {
+    position: fixed;
+    width: calc(100% - 305px);
+    height: calc(100% - 90px);
+    margin: 10px;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    transition: width 0.3s, transform 0.3s;
+}
+
+.content.shift {
+    width: calc(100% - 20px);
+}
+
+.page {
+    display: none;
+    width: 100%;
+    min-height: 100%;
+    height: fit-content;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.page.scroll {
+    width: calc(100% - 10px);
+    padding-right: 10px;
+}
+
+.page.projects.show {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page.search span {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.page.search h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.page.show {
+    display: flex;
+}
+
+.about {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    animation-name: breathe;
+    animation-duration: 60s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    background:
+        repeating-linear-gradient(45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.06) 10px,
+            rgba(255, 255, 255, 0.06) 20px),
+        linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.12));
+    background-size: 85px 100%;
+}
+
+.content h1 {
+    user-select: none;
+    text-align: center;
+}
+
+.content span {
+    width: 100%;
+    height: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    user-select: none;
+}
+
+.image_holder {
+    height: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.image_holder div {
+    aspect-ratio: 1/1;
+    height: 100%;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: border 0.2s;
+}
+
+.image_holder div:hover {
+    border: 2px solid white;
+}
+
+.javascript {
+    background-image: url(icon/javascript.svg);
+    background-size: 75%;
+}
+
+.html {
+    background-image: url(icon/html.svg);
+    background-size: 80%;
+}
+
+.css {
+    background-image: url(icon/css.svg);
+    background-size: 80%;
+}
+
+.lua {
+    background-image: url(icon/lua.svg);
+    background-size: 70%;
+}
+
+.java {
+    background-image: url(icon/java.svg);
+    background-size: 70%;
+    display: none;
+}
+
+.cert {
+    background-image: url(icon/certification1.svg);
+    background-size: 110%;
+}
+
+.featured {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.horizontal_pane {
+    display: flex;
+    gap: 10px;
+    height: 280px;
+    width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+    overflow-x: auto;
+}
+
+.project_holder {
+    aspect-ratio: 10/8;
+    min-width: 300px;
+    max-width: 400px;
+    max-height: 280px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.project_holder:hover video {
+    opacity: 0.8;
+}
+
+.project_holder a {
+    text-decoration: none;
+}
+
+.project_holder video {
+    aspect-ratio: 640/480;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project_holder .title {
+    position: relative;
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    height: 30%;
+}
+
+.title .icon {
+    aspect-ratio: 1/1;
+    height: calc(100% - 20px);
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.title span {
+    height: 100%;
+    margin: 0;
+    user-select: none;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1.5rem;
+}
+
+.project_holder .info {
+    flex: 1;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    width: calc(100% - 20px);
+    margin-left: auto;
+    margin-right: auto;
+    user-select: none;
+    font-weight: 600;
+}
+
+.project_holder .action {
+    width: 100%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.action a {
+    aspect-ratio: 6/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 30px);
+    margin: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+    transition: border 0.2s;
+}
+
+.action a:hover {
+    border: 2px solid white;
+}
+
+.copyright {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    font-weight: 700;
+}
+
+.search_holder {
+    width: calc(100% - 20px);
+    min-height: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.service {
+    aspect-ratio: 1/1;
+    flex: 0 0 auto;
+    height: 50px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.service div {
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.search_box {
+    outline: none;
+    resize: none;
+    flex: 1;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    transition: border 0.2s;
+}
+
+.search_go {
+    display: block;
+    aspect-ratio: 1/1;
+    height: calc(100% - 14px);
+    margin: 7px;
+    position: absolute;
+    right: 0;
+    transition: border 0.2s;
+    cursor: pointer;
+    outline: none;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(icon/send.svg);
+}
+
+.service:hover, .search_go:hover {
+    border: 1px solid white;
+}
+
+.search_box:hover {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.service:focus, .search_go:focus, .search_box:focus {
+    border: 1px solid white;
+}
+
+* {
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    font-family: Arial;
+}
+
+@media screen and (max-width: 767px) {s
+    .page.scroll {
+        width: 100%;
+        padding-right: unset;
+    }
+
+    nav.sidebar {
+        transform: translateX(calc(-100% - 10px));
+        height: calc(100% - 90px);
+        top: unset;
+        bottom: 0;
+    }
+
+    nav.sidebar.shift {
+        width: calc(100% - 20px);
+        transform: unset;
+    }
+
+    .content {
+        width: calc(100% - 20px);
+    }
+
+    .content.shift {
+        transform: translateX(calc(100% + 10px));
+    }
+
+    header {
+        width: calc(100% - 20px);
+    }
+}

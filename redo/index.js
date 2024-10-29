@@ -179,6 +179,7 @@ function handlePageButtons() {
         let open = this_button.getAttribute('href').replace('#', '');
         this_button.onclick = function () {
             openPage(open);
+            if (window.innerWidth < 767) { handleSidebar() };
         }
     }
 }

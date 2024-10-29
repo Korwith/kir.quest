@@ -1,3 +1,13 @@
+@keyframes breathe {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 100vw;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -12,16 +22,6 @@
     background: rgba(255, 255, 255, 0.12);
     border-radius: 12px;
     box-sizing: border-box;
-}
-
-@keyframes breathe {
-    0% {
-        background-position-x: 0;
-    }
-
-    100% {
-        background-position-x: 100vw;
-    }
 }
 
 body {
@@ -372,7 +372,7 @@ header.shift {
 }
 
 .image_holder {
-    height: 75px;
+    height: 60px;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
@@ -633,7 +633,7 @@ header.shift {
     font-family: Arial;
 }
 
-@media screen and (max-width: 767px) {s
+@media screen and (max-width: 767px) {
     .page.scroll {
         width: 100%;
         padding-right: unset;
@@ -661,5 +661,9 @@ header.shift {
 
     header {
         width: calc(100% - 20px);
+    }
+
+    .image_holder {
+        height: 50px;
     }
 }

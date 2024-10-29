@@ -634,6 +634,10 @@ header.shift {
 }
 
 @media screen and (max-width: 767px) {
+    .blurred_img_bg {
+        background-size: 200%;
+    }
+    
     .page.scroll {
         width: 100%;
         padding-right: unset;

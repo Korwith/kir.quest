@@ -219,6 +219,14 @@ function handleKeyDown(event) {
     }
 }
 
+function fullscreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+}
+
 loadProjects();
 handlePageButtons();
 loadSearches();
@@ -226,5 +234,6 @@ updateScrollClass();
 handlePushState();
 sidebar_button.addEventListener('mouseup', handleSidebar);
 yellow_button.addEventListener('mouseup', handleSidebar);
+green_button.addEventListener('mouseup', fullscreen);
 document.addEventListener('keydown', handleKeyDown);
 window.onresize = updateScrollClass;

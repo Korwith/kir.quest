@@ -609,6 +609,15 @@ header.shift {
     transition: border 0.2s;
     cursor: pointer;
     outline: none;
+}
+
+.search_go::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;

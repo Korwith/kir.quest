@@ -609,6 +609,10 @@ header.shift {
     transition: border 0.2s;
     cursor: pointer;
     outline: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    background-image: url(icon/send.svg);
 }
 
 .service:hover, .search_go:hover {

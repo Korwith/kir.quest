@@ -317,6 +317,10 @@ header.shift {
     gap: 10px;
 }
 
+.page.search.show {
+    padding-bottom: 10px;
+}
+
 .page.search span {
     margin-top: 0;
     margin-bottom: 5px;
